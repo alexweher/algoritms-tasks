@@ -30,5 +30,34 @@ public class StringsTasks {
         return true;
     }
 
-    
+
+    public static boolean contains(String s, String sub) {
+
+        for (int i = 0; i <= s.length() - sub.length(); i++) {
+
+            String part = s.substring(i, i + sub.length());
+
+            if (part.equals(sub)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static void printTokens(String s) {
+
+        if (s == null || s.trim().isEmpty()) {
+            System.out.println(0);
+            return;
+        }
+
+        String[] tokens = s.split("[ !,?._']+");
+
+        System.out.println(tokens.length);
+
+        for (String word : tokens) {
+            System.out.println(word);
+        }
+    }
 }
